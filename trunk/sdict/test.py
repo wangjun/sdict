@@ -6,17 +6,17 @@ print d['123']
 d['a/b/c']='xxxxx'
 d['a/b/zz']='yyyy'
 d['a/zz']='zzzzz'
-print d.prefix('a/')
-print d.keys()
-print d.values()
-print 'len:',len(d)
-print d
+print 'prefix a:',d.prefix('a/')
+print 'all keys:',d.keys()
+print 'all values:',d.values()
+print 'length:',len(d)
+print 'd =',d
 
 x = sdict.Dict()
 for i in xrange(100):
     x[i] = i+1
 del x[33]
 
-print x.greater(33)
-print 'len:',len(x)
+print 'keys greater or equal to 33', x.greater(33)
+print 'length:',len(x)
 

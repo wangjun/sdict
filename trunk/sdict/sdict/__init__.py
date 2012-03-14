@@ -89,12 +89,13 @@ class Dict(object):
 
 
 	def keys(self):
-		return self.greater(chr(0))
+		items = self.items()
+		return [x for (x,y) in items] 
 
 	def values(self):
-		keys = self.keys()
-		return [self.get(x) for x in keys]
-
+		items = self.items()
+		return [y for (x,y) in items] 
+	
 	def items(self):
 		result =[]
 		tst.tst_all(self.__tst__,result)

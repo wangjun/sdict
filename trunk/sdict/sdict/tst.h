@@ -30,7 +30,7 @@ enum SortingOrder
 	DESC=0
 };
 
-tst_db *create_tst_db();
+tst_db *create_tst_db(void);
 void tst_put(tst_db * db, PyObject *key, PyObject * value);
 PyObject * tst_get(tst_db * db, PyObject *key);
 void tst_prefix(tst_db *db, PyObject* prefix,

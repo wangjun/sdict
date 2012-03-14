@@ -18,5 +18,7 @@ for i in xrange(100):
 del x[33]
 
 print 'keys greater or equal to 33', x.greater(33)
+print 'keys less than or equal to 32,at most 5 listed',x.less(32,limit=5)
+
 print 'length:',len(x)
 

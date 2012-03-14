@@ -6,6 +6,7 @@ class Dict(object):
 		self.__tst__ = tst.create_tst_db()
 
 	def __del__(self):
+		#print 'over'
 		tst.free_tst_db(self.__tst__)
 
 	def put(self,key,value):

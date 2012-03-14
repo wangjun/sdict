@@ -18,7 +18,7 @@ new_tst_db(uint32 cap)
 }
 
 tst_db *
-create_tst_db()
+create_tst_db(void)
 {
 	return new_tst_db(409600);
 }
@@ -26,8 +26,13 @@ create_tst_db()
 void
 free_tst_db(tst_db * db)
 {
+	int i;
 	if (db != NULL) {
 		if (db->data != NULL) {
+			for(i=0;i< db->cap;i++){
+				if(db->data[i].value)
+					Py_DECREF(db->data[i].value);
+			} 		
 			free(db->data);
 		}
 		free(db);
@@ -173,7 +178,7 @@ tst_put(tst_db * db, PyObject *key, PyObject * value)
 	int len_of_key = PyString_Size(key);
 	if (len_of_key <= 0)
 		return;
-	db->root = insert(db, db->root, PyString_AsString(key), value, 0, len_of_key, 0);
+	db->root = insert(db, db->root, (unsigned char*)PyString_AsString(key), value, 0, len_of_key, 0);
 }
 
 static uint32
@@ -213,7 +218,7 @@ tst_delete(tst_db * db, PyObject *key)
 	int d = 0;
 	uint32 myparent = 0;
 	uint32 new_p;
-	unsigned char * pkey = PyString_AsString(key);
+	unsigned char * pkey = (unsigned char *)PyString_AsString(key);
 	if (len_of_key <= 0)
 		return;
 
@@ -432,7 +437,7 @@ tst_less(tst_db * db, PyObject *key, PyObject * result, int limit)
 	int n_result_size;
 	int * result_size = &n_result_size;
 	unsigned char base_key[MAX_KEY_SIZE] = { 0 };
-	unsigned char* pkey = PyString_AsString(key);
+	unsigned char* pkey = (unsigned char*)PyString_AsString(key);
 	int root;
 	if (len_of_key <= 0)
 		return;
@@ -453,7 +458,7 @@ tst_greater(tst_db * db, PyObject *key, PyObject * result , int limit)
 	int *result_size = &n_result_size;
 	unsigned char base_key[MAX_KEY_SIZE] = { 0 };
 	int root;
-	unsigned char * pkey = PyString_AsString(key);
+	unsigned char * pkey = (unsigned char*)PyString_AsString(key);
 	if (len_of_key <= 0)
 		return;
 	root = db->root;
@@ -470,7 +475,7 @@ void
 tst_prefix(tst_db * db, PyObject *prefix, PyObject *result, int limit, enum SortingOrder sorting_order)
 {
 	int len_of_prefix = PyString_Size(prefix);
-	unsigned char* p_prefix = PyString_AsString(prefix);
+	unsigned char* p_prefix = (unsigned char*)PyString_AsString(prefix);
 	int key_len;
 	unsigned char base_key[MAX_KEY_SIZE] = { 0 };
 	int n_result_size = 0;
@@ -500,7 +505,7 @@ PyObject *
 tst_get(tst_db * db, PyObject *key)
 {
 	int len_of_key = PyString_Size(key);
-	unsigned char * pkey = PyString_AsString(key);
+	unsigned char * pkey = (unsigned char*)PyString_AsString(key);
 	if (len_of_key <= 0){
 		Py_INCREF(Py_None);
 		return Py_None;

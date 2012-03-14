@@ -4,7 +4,7 @@
 #include "tst.h"
 %}
 
-extern tst_db *create_tst_db();
+extern tst_db *create_tst_db(void);
 extern void tst_put(tst_db * db, PyObject *key, PyObject * value);
 extern PyObject * tst_get(tst_db * db, PyObject *key);
 extern void tst_prefix(tst_db *db, PyObject* prefix,

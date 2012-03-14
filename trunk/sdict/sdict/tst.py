@@ -99,6 +99,14 @@ tst_delete = _tst.tst_delete
 def free_tst_db(*args):
   return _tst.free_tst_db(*args)
 free_tst_db = _tst.free_tst_db
+
+def tst_length(*args):
+  return _tst.tst_length(*args)
+tst_length = _tst.tst_length
+
+def tst_all(*args):
+  return _tst.tst_all(*args)
+tst_all = _tst.tst_all
 # This file is compatible with both classic and new-style classes.
 
 

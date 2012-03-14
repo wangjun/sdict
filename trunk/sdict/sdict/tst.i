@@ -17,4 +17,7 @@ extern void tst_greater(tst_db *db, PyObject* key,
 extern void tst_delete(tst_db *db, PyObject * key);
 extern void free_tst_db(tst_db * db);
 
+extern int tst_length(tst_db *db);
+extern void tst_all(tst_db* db, PyObject * result);
+
 

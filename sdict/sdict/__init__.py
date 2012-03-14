@@ -15,7 +15,7 @@ class Dict(object):
 		elif isinstance(key,int) and key<(1<<32):
 			tst.tst_put(self.__tst__,str(key).zfill(10),value)
 		else:
-			print 'invalid key'
+			raise Exception('invalid key: '+str(key))
 
 	def get(self,key):
 		if isinstance(key,str):
@@ -23,7 +23,7 @@ class Dict(object):
 		elif isinstance(key,int) and key<(1<<32):
 			return tst.tst_get(self.__tst__,str(key).zfill(10))
 		else:
-			print 'invalid key'
+			raise Exception('invalid key: '+str(key))	
 
 	def delete(self,key):
 		if isinstance(key,str):
@@ -31,14 +31,14 @@ class Dict(object):
 		elif isinstance(key,int) and key<(1<<32):
 			tst.tst_delete(self.__tst__,str(key).zfill(10))
 		else:
-			print 'invalid key'
+			raise Exception('invalid key: '+str(key))
 
 	def prefix(self,key,limit=INT_MAX,is_asc=1):
 		result = []
 		if isinstance(key,str):
 			tst.tst_prefix(self.__tst__,key,result,limit,is_asc)
 		else:
-			print 'invalid key'
+			raise Exception('invalid key: '+str(key))	
 		return result
 
 	def greater(self,key,limit=INT_MAX):
@@ -50,7 +50,7 @@ class Dict(object):
 			int_flag = 1
 			tst.tst_greater(self.__tst__,str(key).zfill(10),result,limit)
 		else:
-			print 'invalid key'
+			raise Exception('invalid key: '+str(key))	
 		if int_flag == 1:
 			result = [int(x) for x in result]
 		return result
@@ -64,7 +64,7 @@ class Dict(object):
 			int_flag =1 
 			tst.tst_less(self.__tst__,str(key).zfill(10),result,limit)
 		else:
-			print 'invalid key'
+			raise Exception('invalid key: '+str(key))
 
 		if int_flag == 1:
 			result = [int(x) for x in result]
@@ -84,6 +84,9 @@ class Dict(object):
 	def __delitem__(self,key):
 		self.delete(key)
 
+	def __len__(self):
+		return tst.tst_length(self.__tst__);
+
 
 	def keys(self):
 		return self.greater(chr(0))
@@ -92,4 +95,12 @@ class Dict(object):
 		keys = self.keys()
 		return [self.get(x) for x in keys]
 
-		
+	def items(self):
+		result =[]
+		tst.tst_all(self.__tst__,result)
+		return result		
+	def __str__(self):
+		return str(dict(self.items()))
+	def __repr__(self):
+		return self.__str__()
+

@@ -12,9 +12,18 @@ new_tst_db(uint32 cap)
 	db->root = 0;
 	db->f_head = 0;
 	db->cap = cap;
+	db->ent_count = 0;
 	db->data = (tst_node *) malloc(sizeof(tst_node) * cap);
 	memset(&db->data[0], 0, sizeof(db->data));
 	return db;
+}
+
+int tst_length(tst_db *db)
+{
+	if(db){
+		return db->ent_count;
+	}
+	return 0;
 }
 
 tst_db *
@@ -105,6 +114,8 @@ insert(tst_db * db, uint32 node, const unsigned char *s, PyObject * value, int d
 	} else {
 		if(db->data[x].value){
 			Py_XDECREF(db->data[x].value);
+		}else{
+			db->ent_count ++;
 		}
 		db->data[x].value = value;
 		Py_XINCREF(value);
@@ -239,6 +250,7 @@ tst_delete(tst_db * db, PyObject *key)
 	if (node) {
 		Py_XDECREF(db->data[node].value);
 		db->data[node].value = 0;
+		db->ent_count --;
 	}
 	while (node) {		//found it
 		myparent = db->data[node].parent;
@@ -286,9 +298,22 @@ append_result(const unsigned char *key, PyObject* result, int *result_size,int k
 	*result_size = (*result_size) + 1;
 }
 
-
 static
     void
+append_result_with_value(const unsigned char *key, PyObject* result, int *result_size,int key_len, PyObject* value)
+{
+	//printf("append: %s\n",key);
+	//strcat(result, key);
+	//strcat(result, "\r\n");
+	PyObject * tup = PyTuple_New(2);
+	PyTuple_SetItem(tup,0,Py_BuildValue("s#",key,key_len));
+	PyTuple_SetItem(tup,1,value);
+	PyList_Append(result,tup);
+	*result_size = (*result_size) + 1;
+}
+
+static
+void
 dfs(tst_db * db, uint32 node, PyObject * result, int* result_size, unsigned char key_buf[], int d, int limit, enum SortingOrder sorting_order)
 {
 	uint32 first, second;
@@ -331,6 +356,55 @@ dfs(tst_db * db, uint32 node, PyObject * result, int* result_size, unsigned char
 		return;
 
 	dfs(db, second, result,result_size, key_buf, d, limit, sorting_order);
+	key_buf[d] = db->data[node].c;
+
+
+}
+
+static
+void
+dfs_with_value(tst_db * db, uint32 node, PyObject * result, int* result_size, unsigned char key_buf[], int d, int limit, enum SortingOrder sorting_order)
+{
+	uint32 first, second;
+	//printf("--dfs--\n");
+	if (node == 0)
+		return;
+
+	if (*result_size >= limit)
+		return;
+	if (sorting_order == ASC) {
+		first = db->data[node].left;
+		second = db->data[node].right;
+	} else {
+		first = db->data[node].right;
+		second = db->data[node].left;
+	}
+	dfs_with_value(db, first, result,result_size, key_buf, d, limit, sorting_order);
+	key_buf[d] = db->data[node].c;
+
+	if (*result_size >= limit)
+		return;
+
+	if (sorting_order == ASC) {
+		if (db->data[node].value) {
+			append_result_with_value(key_buf, result, result_size,d+1,db->data[node].value);
+		}
+
+		dfs_with_value(db, db->data[node].mid, result,result_size, key_buf, d + 1, limit, sorting_order);
+		key_buf[d] = db->data[node].c;
+	} else {
+		dfs_with_value(db, db->data[node].mid, result,result_size, key_buf, d + 1, limit, sorting_order);
+		if (*result_size >= limit)
+			return;
+
+		if (db->data[node].value) {
+			append_result_with_value(key_buf, result, result_size,d+1,db->data[node].value);
+		}
+	}
+	if (*result_size >= limit)
+		return;
+
+	dfs_with_value(db, second, result,result_size, key_buf, d, limit, sorting_order);
 	key_buf[d] = db->data[node].c;
 
 
@@ -518,3 +592,16 @@ tst_get(tst_db * db, PyObject *key)
 	}
 	return db->data[node].value;
 }
+
+void
+tst_all(tst_db *db, PyObject * result)
+{
+	int key_len=0;
+	unsigned char base_key[MAX_KEY_SIZE] = { 0 };
+	int n_result_size = 0;
+	int* result_size = & n_result_size;
+	int limit = db->ent_count;
+	dfs_with_value(db, db->root, result, result_size, base_key, key_len, limit, ASC);
+
+}
+

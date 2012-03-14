@@ -3097,6 +3097,16 @@ SWIG_AsVal_int (PyObject * obj, int *val)
   return res;
 }
 
+
+  #define SWIG_From_long   PyInt_FromLong 
+
+
+SWIGINTERNINLINE PyObject *
+SWIG_From_int  (int value)
+{    
+  return SWIG_From_long  (value);
+}
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -3327,6 +3337,52 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_tst_length(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tst_db *arg1 = (tst_db *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:tst_length",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tst_db, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "tst_length" "', argument " "1"" of type '" "tst_db *""'"); 
+  }
+  arg1 = (tst_db *)(argp1);
+  result = (int)tst_length(arg1);
+  resultobj = SWIG_From_int((int)(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_tst_all(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tst_db *arg1 = (tst_db *) 0 ;
+  PyObject *arg2 = (PyObject *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:tst_all",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tst_db, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "tst_all" "', argument " "1"" of type '" "tst_db *""'"); 
+  }
+  arg1 = (tst_db *)(argp1);
+  arg2 = obj1;
+  tst_all(arg1,arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"create_tst_db", _wrap_create_tst_db, METH_VARARGS, NULL},
@@ -3337,6 +3393,8 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"tst_greater", _wrap_tst_greater, METH_VARARGS, NULL},
 	 { (char *)"tst_delete", _wrap_tst_delete, METH_VARARGS, NULL},
 	 { (char *)"free_tst_db", _wrap_free_tst_db, METH_VARARGS, NULL},
+	 { (char *)"tst_length", _wrap_tst_length, METH_VARARGS, NULL},
+	 { (char *)"tst_all", _wrap_tst_all, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };
 

@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <Python.h>
 
-#define MAX_KEY_SIZE 256
+#define MAX_KEY_SIZE 2560
 typedef unsigned int uint32;
 typedef unsigned long long uint64;
 
@@ -21,6 +21,7 @@ typedef struct{
 	uint32 size;
 	uint32 cap;
 	uint32 f_head; //head of reuseable node list
+	int ent_count;
 	tst_node* data;//data[0] is not used
 }tst_db;
 
@@ -42,5 +43,7 @@ void tst_greater(tst_db *db, PyObject* key,
 
 void tst_delete(tst_db *db, PyObject * key);
 void free_tst_db(tst_db * db);
+int tst_length(tst_db *db);
+void tst_all(tst_db *db,PyObject * result);
 
 #endif

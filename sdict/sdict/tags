@@ -3,10 +3,10 @@
 !_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
-!_TAG_PROGRAM_VERSION	5.6	//
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 GCC_HASCLASSVISIBILITY	tst_wrap.c	83;"	d	file:
-LLONG_MAX	tst_wrap.c	3052;"	d	file:
-LLONG_MIN	tst_wrap.c	3053;"	d	file:
+LLONG_MAX	tst_wrap.c	2959;"	d	file:
+LLONG_MIN	tst_wrap.c	2960;"	d	file:
 PY_SSIZE_T_MAX	tst_wrap.c	881;"	d	file:
 PY_SSIZE_T_MIN	tst_wrap.c	882;"	d	file:
 PyBool_FromLong	tst_wrap.c	/^PyObject *PyBool_FromLong(long ok)$/;"	f	file:
@@ -61,8 +61,7 @@ SWIGTEMPLATEDISAMBIGUATOR	tst_wrap.c	22;"	d	file:
 SWIGTEMPLATEDISAMBIGUATOR	tst_wrap.c	26;"	d	file:
 SWIGTEMPLATEDISAMBIGUATOR	tst_wrap.c	28;"	d	file:
 SWIGTYPE_p_char	tst_wrap.c	2918;"	d	file:
-SWIGTYPE_p_int	tst_wrap.c	2919;"	d	file:
-SWIGTYPE_p_tst_db	tst_wrap.c	2920;"	d	file:
+SWIGTYPE_p_tst_db	tst_wrap.c	2919;"	d	file:
 SWIGUNUSED	tst_wrap.c	45;"	d	file:
 SWIGUNUSED	tst_wrap.c	47;"	d	file:
 SWIGUNUSED	tst_wrap.c	50;"	d	file:
@@ -71,14 +70,13 @@ SWIGUNUSEDPARM	tst_wrap.c	/^  swig_varlink_repr(swig_varlinkobject *SWIGUNUSEDPA
 SWIGUNUSEDPARM	tst_wrap.c	/^SWIGRUNTIME PyObject* SWIG_PyInstanceMethod_New(PyObject *SWIGUNUSEDPARM(self), PyObject *SWIGUNUSEDPARM(func))$/;"	f
 SWIGUNUSEDPARM	tst_wrap.c	64;"	d	file:
 SWIGUNUSEDPARM	tst_wrap.c	66;"	d	file:
-SWIGVERSION	tst_wrap.c	2946;"	d	file:
+SWIGVERSION	tst_wrap.c	2945;"	d	file:
 SWIG_AcquirePtr	tst_wrap.c	1153;"	d	file:
 SWIG_AddCast	tst_wrap.c	/^SWIGINTERNINLINE int SWIG_AddCast(int r) { $/;"	f
 SWIG_AddCast	tst_wrap.c	297;"	d	file:
 SWIG_AddNewMask	tst_wrap.c	273;"	d	file:
 SWIG_AddTmpMask	tst_wrap.c	276;"	d	file:
 SWIG_ArgError	tst_wrap.c	259;"	d	file:
-SWIG_AsCharPtrAndSize	tst_wrap.c	/^SWIG_AsCharPtrAndSize(PyObject *obj, char** cptr, size_t* psize, int *alloc)$/;"	f
 SWIG_AsVal_double	tst_wrap.c	/^SWIG_AsVal_double (PyObject *obj, double *val)$/;"	f
 SWIG_AsVal_int	tst_wrap.c	/^SWIG_AsVal_int (PyObject * obj, int *val)$/;"	f
 SWIG_AsVal_long	tst_wrap.c	/^SWIG_AsVal_long (PyObject *obj, long* val)$/;"	f
@@ -112,13 +110,13 @@ SWIG_GetModule	tst_wrap.c	1175;"	d	file:
 SWIG_IOError	tst_wrap.c	713;"	d	file:
 SWIG_IndexError	tst_wrap.c	715;"	d	file:
 SWIG_InitializeModule	tst_wrap.c	/^SWIG_InitializeModule(void *clientdata) {$/;"	f
-SWIG_InstallConstants	tst_wrap.c	3822;"	d	file:
+SWIG_InstallConstants	tst_wrap.c	3617;"	d	file:
 SWIG_InternalNewPointerObj	tst_wrap.c	1150;"	d	file:
 SWIG_IsNewObj	tst_wrap.c	275;"	d	file:
 SWIG_IsOK	tst_wrap.c	258;"	d	file:
 SWIG_IsTmpObj	tst_wrap.c	278;"	d	file:
 SWIG_MAXCASTRANK	tst_wrap.c	286;"	d	file:
-SWIG_MangledTypeQuery	tst_wrap.c	2924;"	d	file:
+SWIG_MangledTypeQuery	tst_wrap.c	2923;"	d	file:
 SWIG_MangledTypeQueryModule	tst_wrap.c	/^SWIG_MangledTypeQueryModule(swig_module_info *start, $/;"	f
 SWIG_MemoryError	tst_wrap.c	723;"	d	file:
 SWIG_MustGetPtr	tst_wrap.c	2747;"	d	file:
@@ -245,29 +243,28 @@ SWIG_TypeName	tst_wrap.c	/^SWIG_TypeName(const swig_type_info *ty) {$/;"	f
 SWIG_TypeNameComp	tst_wrap.c	/^SWIG_TypeNameComp(const char *f1, const char *l1,$/;"	f
 SWIG_TypeNewClientData	tst_wrap.c	/^SWIG_TypeNewClientData(swig_type_info *ti, void *clientdata) {$/;"	f
 SWIG_TypePrettyName	tst_wrap.c	/^SWIG_TypePrettyName(const swig_type_info *type) {$/;"	f
-SWIG_TypeQuery	tst_wrap.c	2923;"	d	file:
+SWIG_TypeQuery	tst_wrap.c	2922;"	d	file:
 SWIG_TypeQueryModule	tst_wrap.c	/^SWIG_TypeQueryModule(swig_module_info *start, $/;"	f
 SWIG_TypeRank	tst_wrap.c	283;"	d	file:
 SWIG_UnknownError	tst_wrap.c	712;"	d	file:
 SWIG_UnpackData	tst_wrap.c	/^SWIG_UnpackData(const char *c, void *ptr, size_t sz) {$/;"	f
 SWIG_UnpackDataName	tst_wrap.c	/^SWIG_UnpackDataName(const char *c, void *ptr, size_t sz, const char *name) {$/;"	f
 SWIG_UnpackVoidPtr	tst_wrap.c	/^SWIG_UnpackVoidPtr(const char *c, void **ptr, const char *name) {$/;"	f
-SWIG_VERSION	tst_wrap.c	2947;"	d	file:
+SWIG_VERSION	tst_wrap.c	2946;"	d	file:
 SWIG_ValueError	tst_wrap.c	720;"	d	file:
-SWIG_addvarlink	tst_wrap.c	3821;"	d	file:
+SWIG_addvarlink	tst_wrap.c	3616;"	d	file:
 SWIG_arg_fail	tst_wrap.c	2746;"	d	file:
-SWIG_as_voidptr	tst_wrap.c	2950;"	d	file:
-SWIG_as_voidptrptr	tst_wrap.c	2951;"	d	file:
+SWIG_as_voidptr	tst_wrap.c	2949;"	d	file:
+SWIG_as_voidptrptr	tst_wrap.c	2950;"	d	file:
 SWIG_contract_assert	tst_wrap.c	2912;"	d	file:
 SWIG_exception_fail	tst_wrap.c	2910;"	d	file:
 SWIG_fail	tst_wrap.c	1183;"	d	file:
 SWIG_globals	tst_wrap.c	/^  SWIG_globals(void) {$/;"	f
 SWIG_init	tst_wrap.c	/^SWIG_init(void) {$/;"	f
-SWIG_init	tst_wrap.c	2938;"	d	file:
-SWIG_init	tst_wrap.c	2941;"	d	file:
-SWIG_name	tst_wrap.c	2944;"	d	file:
-SWIG_newvarlink	tst_wrap.c	3820;"	d	file:
-SWIG_pchar_descriptor	tst_wrap.c	/^SWIG_pchar_descriptor(void)$/;"	f
+SWIG_init	tst_wrap.c	2937;"	d	file:
+SWIG_init	tst_wrap.c	2940;"	d	file:
+SWIG_name	tst_wrap.c	2943;"	d	file:
+SWIG_newvarlink	tst_wrap.c	3615;"	d	file:
 SwigMethods	tst_wrap.c	/^static PyMethodDef SwigMethods[] = {$/;"	v	file:
 SwigPyBuiltin_AddPublicSymbol	tst_wrap.c	/^SwigPyBuiltin_AddPublicSymbol(PyObject *seq, const char *key) {$/;"	f
 SwigPyClientData	tst_wrap.c	/^} SwigPyClientData;$/;"	t	typeref:struct:__anon2	file:
@@ -307,19 +304,17 @@ SwigPyPacked_print	tst_wrap.c	/^SwigPyPacked_print(SwigPyPacked *v, FILE *fp, in
 SwigPyPacked_repr	tst_wrap.c	/^SwigPyPacked_repr(SwigPyPacked *v)$/;"	f
 SwigPyPacked_str	tst_wrap.c	/^SwigPyPacked_str(SwigPyPacked *v)$/;"	f
 SwigPyPacked_type	tst_wrap.c	/^SwigPyPacked_type(void) {$/;"	f
-ULLONG_MAX	tst_wrap.c	3054;"	d	file:
+ULLONG_MAX	tst_wrap.c	2961;"	d	file:
 _CRT_SECURE_NO_DEPRECATE	tst_wrap.c	114;"	d	file:
 _PyLong_FromSsize_t	tst_wrap.c	743;"	d	file:
 _SCL_SECURE_NO_DEPRECATE	tst_wrap.c	119;"	d	file:
 _SWIG_Py_None	tst_wrap.c	/^_SWIG_Py_None(void)$/;"	f
 _SWIG_This	tst_wrap.c	/^_SWIG_This(void)$/;"	f
 _swigc__p_char	tst_wrap.c	/^static swig_cast_info _swigc__p_char[] = {  {&_swigt__p_char, 0, 0, 0},{0, 0, 0, 0}};$/;"	v	file:
-_swigc__p_int	tst_wrap.c	/^static swig_cast_info _swigc__p_int[] = {  {&_swigt__p_int, 0, 0, 0},{0, 0, 0, 0}};$/;"	v	file:
 _swigc__p_tst_db	tst_wrap.c	/^static swig_cast_info _swigc__p_tst_db[] = {  {&_swigt__p_tst_db, 0, 0, 0},{0, 0, 0, 0}};$/;"	v	file:
 _swigt__p_char	tst_wrap.c	/^static swig_type_info _swigt__p_char = {"_p_char", "char *", 0, 0, (void*)0, 0};$/;"	v	file:
-_swigt__p_int	tst_wrap.c	/^static swig_type_info _swigt__p_int = {"_p_int", "int *", 0, 0, (void*)0, 0};$/;"	v	file:
 _swigt__p_tst_db	tst_wrap.c	/^static swig_type_info _swigt__p_tst_db = {"_p_tst_db", "tst_db *", 0, 0, (void*)0, 0};$/;"	v	file:
-append_result	tst.c	/^append_result(const char *key, char *result, int *result_size)$/;"	f	file:
+append_result	tst.c	/^append_result(const unsigned char *key, PyObject* result, int *result_size,int key_len)$/;"	f	file:
 as_buffer	tst_wrap.c	/^  PyBufferProcs as_buffer;$/;"	m	struct:__anon1	file:
 as_mapping	tst_wrap.c	/^  PyMappingMethods as_mapping;$/;"	m	struct:__anon1	file:
 as_number	tst_wrap.c	/^  PyNumberMethods as_number;$/;"	m	struct:__anon1	file:
@@ -330,13 +325,13 @@ charbufferproc	tst_wrap.c	/^typedef getcharbufferproc charbufferproc;$/;"	t	file
 clientdata	tst_wrap.c	/^  void                    *clientdata;		\/* Language specific module data *\/$/;"	m	struct:swig_module_info	file:
 clientdata	tst_wrap.c	/^  void                   *clientdata;		\/* language specific type data *\/$/;"	m	struct:swig_type_info	file:
 converter	tst_wrap.c	/^  swig_converter_func     converter;		\/* function to cast the void pointers *\/$/;"	m	struct:swig_cast_info	file:
-create_tst_db	tst.c	/^create_tst_db()$/;"	f
+create_tst_db	tst.c	/^create_tst_db(void)$/;"	f
 dcast	tst_wrap.c	/^  swig_dycast_func        dcast;		\/* dynamic cast function down a hierarchy *\/$/;"	m	struct:swig_type_info	file:
 delargs	tst_wrap.c	/^  int delargs;$/;"	m	struct:__anon2	file:
 destroy	tst_wrap.c	/^  PyObject *destroy;$/;"	m	struct:__anon2	file:
-dfs	tst.c	/^dfs(tst_db * db, uint32 node, char *result, int *result_size, char key_buf[], int d, int limit, enum SortingOrder sorting_order)$/;"	f	file:
-dfs_greater	tst.c	/^dfs_greater(tst_db * db, uint32 node, const char *key, char *result, int *result_size, char key_buf[], int d, int limit)$/;"	f	file:
-dfs_less	tst.c	/^dfs_less(tst_db * db, uint32 node, const char *key, char *result, int *result_size, char key_buf[], int d, int limit)$/;"	f	file:
+dfs	tst.c	/^dfs(tst_db * db, uint32 node, PyObject * result, int* result_size, unsigned char key_buf[], int d, int limit, enum SortingOrder sorting_order)$/;"	f	file:
+dfs_greater	tst.c	/^dfs_greater(tst_db * db, uint32 node, const unsigned char *key, PyObject * result , int* result_size, unsigned char key_buf[], int d, int limit)$/;"	f	file:
+dfs_less	tst.c	/^dfs_less(tst_db * db, uint32 node, const unsigned char *key, PyObject* result , int* result_size, unsigned char key_buf[], int d, int limit)$/;"	f	file:
 dict	tst_wrap.c	/^  PyObject *dict;$/;"	m	struct:__anon3	file:
 dvalue	tst_wrap.c	/^  double dvalue;$/;"	m	struct:swig_const_info	file:
 ensure_enough_space	tst.c	/^ensure_enough_space(tst_db * db)$/;"	f	file:
@@ -345,7 +340,7 @@ free_tst_db	tst.c	/^free_tst_db(tst_db * db)$/;"	f
 freefunc	tst_wrap.c	/^typedef destructor freefunc;$/;"	t	file:
 get_attr	tst_wrap.c	/^    PyObject *(*get_attr)(void);       \/* Return the current value *\/$/;"	m	struct:swig_globalvar	file:
 implicitconv	tst_wrap.c	/^  int implicitconv;$/;"	m	struct:__anon2	file:
-insert	tst.c	/^insert(tst_db * db, uint32 node, const char *s, PyObject * value, int d, int len_of_s, uint32 parent)$/;"	f	file:
+insert	tst.c	/^insert(tst_db * db, uint32 node, const unsigned char *s, PyObject * value, int d, int len_of_s, uint32 parent)$/;"	f	file:
 klass	tst_wrap.c	/^  PyObject *klass;$/;"	m	struct:__anon2	file:
 lenfunc	tst_wrap.c	/^typedef inquiry lenfunc;$/;"	t	file:
 lvalue	tst_wrap.c	/^  long lvalue;$/;"	m	struct:swig_const_info	file:
@@ -371,8 +366,8 @@ pvalue	tst_wrap.c	/^  void   *pvalue;$/;"	m	struct:swig_const_info	file:
 pytype	tst_wrap.c	/^  PyTypeObject *pytype;$/;"	m	struct:__anon2	file:
 readbufferproc	tst_wrap.c	/^typedef getreadbufferproc readbufferproc;$/;"	t	file:
 remove_node	tst.c	/^remove_node(tst_db * db, uint32 node)$/;"	f	file:
-search	tst.c	/^search(tst_db * db, const char *key, int len_of_s)$/;"	f	file:
-search_with_path	tst.c	/^search_with_path(tst_db * db, const char *key, int len_of_s, char *path)$/;"	f	file:
+search	tst.c	/^search(tst_db * db, const unsigned char *key, int len_of_s)$/;"	f	file:
+search_with_path	tst.c	/^search_with_path(tst_db * db, const unsigned char *key, int len_of_s, unsigned char *path,int *key_len)$/;"	f	file:
 segcountproc	tst_wrap.c	/^typedef getsegcountproc segcountproc;$/;"	t	file:
 set_attr	tst_wrap.c	/^    int       (*set_attr)(PyObject *); \/* Set the value *\/$/;"	m	struct:swig_globalvar	file:
 size	tst_wrap.c	/^  size_t                 size;		        \/* Number of types in this module *\/$/;"	m	struct:swig_module_info	file:
@@ -393,7 +388,7 @@ swig_converter_func	tst_wrap.c	/^typedef void *(*swig_converter_func)(void *, in
 swig_dycast_func	tst_wrap.c	/^typedef struct swig_type_info *(*swig_dycast_func)(void **);$/;"	t	typeref:struct:swig_dycast_func	file:
 swig_globalvar	tst_wrap.c	/^  typedef struct swig_globalvar {$/;"	s	file:
 swig_globalvar	tst_wrap.c	/^  } swig_globalvar;$/;"	t	typeref:struct:swig_globalvar	file:
-swig_module	tst_wrap.c	/^static swig_module_info swig_module = {swig_types, 3, 0, 0, 0, 0};$/;"	v	file:
+swig_module	tst_wrap.c	/^static swig_module_info swig_module = {swig_types, 2, 0, 0, 0, 0};$/;"	v	file:
 swig_module_info	tst_wrap.c	/^typedef struct swig_module_info {$/;"	s	file:
 swig_module_info	tst_wrap.c	/^} swig_module_info;$/;"	t	typeref:struct:swig_module_info	file:
 swig_owntype	tst_wrap.c	1154;"	d	file:
@@ -401,7 +396,7 @@ swig_this	tst_wrap.c	/^static PyObject *swig_this = NULL;$/;"	v	file:
 swig_type_info	tst_wrap.c	/^typedef struct swig_type_info {$/;"	s	file:
 swig_type_info	tst_wrap.c	/^} swig_type_info;$/;"	t	typeref:struct:swig_type_info	file:
 swig_type_initial	tst_wrap.c	/^static swig_type_info *swig_type_initial[] = {$/;"	v	file:
-swig_types	tst_wrap.c	/^static swig_type_info *swig_types[4];$/;"	v	file:
+swig_types	tst_wrap.c	/^static swig_type_info *swig_types[3];$/;"	v	file:
 swig_varlink_dealloc	tst_wrap.c	/^  swig_varlink_dealloc(swig_varlinkobject *v) {$/;"	f
 swig_varlink_getattr	tst_wrap.c	/^  swig_varlink_getattr(swig_varlinkobject *v, char *n) {$/;"	f
 swig_varlink_print	tst_wrap.c	/^  swig_varlink_print(swig_varlinkobject *v, FILE *fp, int SWIGUNUSEDPARM(flags)) {$/;"	f
@@ -411,12 +406,12 @@ swig_varlink_type	tst_wrap.c	/^  swig_varlink_type(void) {$/;"	f
 swig_varlinkobject	tst_wrap.c	/^  typedef struct swig_varlinkobject {$/;"	s	file:
 swig_varlinkobject	tst_wrap.c	/^  } swig_varlinkobject;$/;"	t	typeref:struct:swig_varlinkobject	file:
 swigobject_methods	tst_wrap.c	/^swigobject_methods[] = {$/;"	v	file:
-tst_delete	tst.c	/^tst_delete(tst_db * db, const char *key)$/;"	f
-tst_get	tst.c	/^tst_get(tst_db * db, const char *key)$/;"	f
-tst_greater	tst.c	/^tst_greater(tst_db * db, const char *key, char *result, int *result_size, int limit)$/;"	f
-tst_less	tst.c	/^tst_less(tst_db * db, const char *key, char *result, int *result_size, int limit)$/;"	f
-tst_prefix	tst.c	/^tst_prefix(tst_db * db, const char *prefix, char *result, int *result_size, int limit, enum SortingOrder sorting_order)$/;"	f
-tst_put	tst.c	/^tst_put(tst_db * db, const char *key, PyObject * value)$/;"	f
+tst_delete	tst.c	/^tst_delete(tst_db * db, PyObject *key)$/;"	f
+tst_get	tst.c	/^tst_get(tst_db * db, PyObject *key)$/;"	f
+tst_greater	tst.c	/^tst_greater(tst_db * db, PyObject *key, PyObject * result , int limit)$/;"	f
+tst_less	tst.c	/^tst_less(tst_db * db, PyObject *key, PyObject * result, int limit)$/;"	f
+tst_prefix	tst.c	/^tst_prefix(tst_db * db, PyObject *prefix, PyObject *result, int limit, enum SortingOrder sorting_order)$/;"	f
+tst_put	tst.c	/^tst_put(tst_db * db, PyObject *key, PyObject * value)$/;"	f
 ty	tst_wrap.c	/^  swig_type_info *ty;$/;"	m	struct:__anon3	file:
 ty	tst_wrap.c	/^  swig_type_info *ty;$/;"	m	struct:__anon4	file:
 type	tst_wrap.c	/^  PyTypeObject type;$/;"	m	struct:__anon1	file:

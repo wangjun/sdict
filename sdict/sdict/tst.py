@@ -107,6 +107,10 @@ tst_length = _tst.tst_length
 def tst_all(*args):
   return _tst.tst_all(*args)
 tst_all = _tst.tst_all
+
+def tst_from_list(*args):
+  return _tst.tst_from_list(*args)
+tst_from_list = _tst.tst_from_list
 # This file is compatible with both classic and new-style classes.
 
 

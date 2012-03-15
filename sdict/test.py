@@ -22,3 +22,11 @@ print 'keys less than or equal to 32,at most 5 listed',x.less(32,limit=5)
 
 print 'length:',len(x)
 
+bb = sdict.Dict((x, x) for x in range(5))
+print bb
+print 'keys:', bb.keys()
+for k in bb:
+	print k
+
+
+

@@ -3383,6 +3383,30 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_tst_from_list(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  tst_db *arg1 = (tst_db *) 0 ;
+  PyObject *arg2 = (PyObject *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:tst_from_list",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_tst_db, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "tst_from_list" "', argument " "1"" of type '" "tst_db *""'"); 
+  }
+  arg1 = (tst_db *)(argp1);
+  arg2 = obj1;
+  tst_from_list(arg1,arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { (char *)"create_tst_db", _wrap_create_tst_db, METH_VARARGS, NULL},
@@ -3395,6 +3419,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"free_tst_db", _wrap_free_tst_db, METH_VARARGS, NULL},
 	 { (char *)"tst_length", _wrap_tst_length, METH_VARARGS, NULL},
 	 { (char *)"tst_all", _wrap_tst_all, METH_VARARGS, NULL},
+	 { (char *)"tst_from_list", _wrap_tst_from_list, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };
 

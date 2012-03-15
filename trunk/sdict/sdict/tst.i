@@ -19,5 +19,6 @@ extern void free_tst_db(tst_db * db);
 
 extern int tst_length(tst_db *db);
 extern void tst_all(tst_db* db, PyObject * result);
+extern void tst_from_list(tst_db *db, PyObject *py_list);
 
 

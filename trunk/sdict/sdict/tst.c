@@ -605,3 +605,19 @@ tst_all(tst_db *db, PyObject * result)
 
 }
 
+void
+tst_from_list(tst_db *db,PyObject * py_list)
+{
+	int list_len =0 ;
+	int i;
+	PyObject *tuple,*key,*value;
+	assert(PyList_Check(py_list));
+	list_len = PyList_Size(py_list);
+	for (i=0; i<list_len ;i++){
+		tuple = PyList_GetItem(py_list,i);
+		key = PyTuple_GetItem(tuple,0);
+		value = PyTuple_GetItem(tuple,1);	
+		tst_put(db,key,value);
+	}
+}
+

@@ -45,5 +45,6 @@ void tst_delete(tst_db *db, PyObject * key);
 void free_tst_db(tst_db * db);
 int tst_length(tst_db *db);
 void tst_all(tst_db *db,PyObject * result);
-
+void tst_from_list(tst_db *db, PyObject* py_list);
+ 
 #endif

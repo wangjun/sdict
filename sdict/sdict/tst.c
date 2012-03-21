@@ -113,12 +113,11 @@ insert(tst_db * db, uint32 node, const unsigned char *s, PyObject * value, int d
 		db->data[x].mid = no;
 	} else {
 		if(db->data[x].value){
-			Py_XDECREF(db->data[x].value);
+			Py_DECREF(db->data[x].value);
 		}else{
 			db->ent_count ++;
 		}
 		db->data[x].value = value;
-		Py_XINCREF(value);
 	}
 	db->data[x].parent = parent;
 
@@ -189,6 +188,7 @@ tst_put(tst_db * db, PyObject *key, PyObject * value)
 	int len_of_key = PyString_Size(key);
 	if (len_of_key <= 0)
 		return;
+	Py_INCREF(value);
 	db->root = insert(db, db->root, (unsigned char*)PyString_AsString(key), value, 0, len_of_key, 0);
 }
 
@@ -248,7 +248,7 @@ tst_delete(tst_db * db, PyObject *key)
 	}
 
 	if (node) {
-		Py_XDECREF(db->data[node].value);
+		Py_DECREF(db->data[node].value);
 		db->data[node].value = 0;
 		db->ent_count --;
 	}
@@ -580,6 +580,7 @@ tst_get(tst_db * db, PyObject *key)
 {
 	int len_of_key = PyString_Size(key);
 	unsigned char * pkey = (unsigned char*)PyString_AsString(key);
+	PyObject * value;
 	if (len_of_key <= 0){
 		Py_INCREF(Py_None);
 		return Py_None;
@@ -590,7 +591,10 @@ tst_get(tst_db * db, PyObject *key)
 		Py_INCREF(Py_None);
 		return Py_None;
 	}
-	return db->data[node].value;
+	value = db->data[node].value;
+	//printf("ref_count:%d\n",value->ob_refcnt);
+	Py_INCREF(value);
+	return value;
 }
 
 void
